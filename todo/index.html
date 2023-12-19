@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+    <div id="container" class="center-items">
+        <div id="task-container">
+            <div id="task-title">&#9997; Task List </div>
+            <div id="task-input">
+                <input type="text" placeholder="Add new task" id="task-item-input" />
+                <button type="button" id="add-task">Add</button>
+            </div>
+            <div id="task-list-wrapper">
+            </div>
+        </div>
+    </div>
+    <template id="task">
+        <div class="task-item">
+            <input type="checkbox" name="task-check" class="task-item-checkbox"/>
+            <div class="task-item-data">Task 1</div>
+            <div class="task-item-action" tabindex="0"> Delete </div>
+        </div>
+    </template>
+</body>
+</html>
