@@ -1,0 +1,13 @@
+{
+  "name": "ui-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "webpack-cli init"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
