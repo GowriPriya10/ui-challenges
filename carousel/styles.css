@@ -61,3 +61,26 @@ img {
 #prev:hover, #next:hover {
     opacity: 0.5;
 }
+
+#play, #pause {
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 30%;
+    z-index: 1;
+}
+
+#play {
+    left: 400px;
+}
+
+#pause {
+    right: 400px;
+}
+
+#play:hover, #pause:hover {
+    transition: color 1s;
+    color: rgb(128, 125, 125);
+}
