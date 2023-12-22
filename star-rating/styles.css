@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rating {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+#stars-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.star {
+    font-size: 5rem;
+    color: grey;
+}
+
+.star:hover, .star:hover ~ .star {
+    cursor: pointer;
+    color: gold !important;
+    transform: rotate(18deg);
+    transition: color 1s, transform 1s;
+}
