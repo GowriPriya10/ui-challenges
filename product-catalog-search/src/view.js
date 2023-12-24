@@ -3,6 +3,7 @@ export default class View {
         this.catalogView = document.getElementById('catalog');
         this.searchInput = document.getElementById('search');
         this.suggestionsOverlay = document.getElementById('suggOverlay');
+        this.suggResultWrapper = document.getElementById('results');
     }
 
     renderView(products) {
@@ -35,15 +36,20 @@ export default class View {
         if(products.length > 0){
             const suggFragment = document.createDocumentFragment();
             products.forEach((product) => {
-                const suggestionItem = document.getElementById('suggestionItemFrag').content.cloneNode(true);
-                suggestionItem.querySelector('.suggestionItem').id = product.id;
-                suggestionItem.querySelector('.suggestionItem').replaceChildren(`${product.brand} - ${product.title}`);
-                suggFragment.appendChild(suggestionItem);
+                this.renderSuggestionItem(product, suggFragment);
             })
-            this.suggestionsOverlay.replaceChildren(suggFragment);
+            this.suggResultWrapper.replaceChildren(suggFragment);
+            
             this.suggestionsOverlay.classList.add('show-overlay');
         }else {
             this.suggestionsOverlay.classList.remove('show-overlay');
         }
+    }
+
+    renderSuggestionItem(item, parentNode = this.suggResultWrapper){
+        const suggestionItem = document.getElementById('suggestionItemFrag').content.cloneNode(true);
+        suggestionItem.querySelector('.suggestionItem').id = item.id;
+        suggestionItem.querySelector('.suggestionItem').replaceChildren(`${item.brand} - ${item.title}`);
+        parentNode.appendChild(suggestionItem);
     }
 }

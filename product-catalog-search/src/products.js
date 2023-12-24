@@ -2,7 +2,9 @@ export default class Products {
 
     BASE_URL = 'https://dummyjson.com/products';
 
-    constructor() {}
+    constructor() {
+        this.totalCount = 0;
+    }
 
     async getProducts() {
         try {
@@ -13,9 +15,19 @@ export default class Products {
         }
     }
 
-    async searchProducts(input) {
+    async searchProducts(input, params = null) {
+        let url = `${this.BASE_URL}/search?q=${input}`;
+
+        if(params) {
+            if(params.skip)
+                url = url.concat(`&skip=${params.skip}`);
+
+            if(params.limit)
+                url = url.concat(`&limit=${params.limit}`)
+        }
+
         try {
-            const products = (await fetch(`${this.BASE_URL}/search?q=${input}`)).json();
+            const products = (await fetch(url)).json();
             return products;
         }catch (e) {
             return e;
