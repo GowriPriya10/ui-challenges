@@ -2,6 +2,7 @@ export default class View {
     constructor() {
         this.catalogView = document.getElementById('catalog');
         this.searchInput = document.getElementById('search');
+        this.suggestionsOverlay = document.getElementById('suggOverlay');
     }
 
     renderView(products) {
@@ -26,7 +27,23 @@ export default class View {
 
     initSearchListener(cb) {
         this.searchInput.addEventListener('keyup', (e) => {
-            cb(e.target.value);
+            cb(e.target.value.trim());
         })
+    }
+
+    suggestionsOverlayRenderer(products) {
+        if(products.length > 0){
+            const suggFragment = document.createDocumentFragment();
+            products.forEach((product) => {
+                const suggestionItem = document.getElementById('suggestionItemFrag').content.cloneNode(true);
+                suggestionItem.querySelector('.suggestionItem').id = product.id;
+                suggestionItem.querySelector('.suggestionItem').replaceChildren(`${product.brand} - ${product.title}`);
+                suggFragment.appendChild(suggestionItem);
+            })
+            this.suggestionsOverlay.replaceChildren(suggFragment);
+            this.suggestionsOverlay.classList.add('show-overlay');
+        }else {
+            this.suggestionsOverlay.classList.remove('show-overlay');
+        }
     }
 }

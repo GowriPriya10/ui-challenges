@@ -9,6 +9,7 @@
             <div class="catalogContainer">
                 <div id="searchProduct">
                     <input type="text" name="search" id="search" placeholder="Search for the products..." />
+                    <section id="suggOverlay" class="suggestionOverlay"></section>
                 </div>
                 <div id="catalog">
                     
@@ -28,6 +29,11 @@
                 <div id="desc"> Description</div>
                 <div id="price">$Pricee</div>
                 <div id="rating">4/5</div>
+            </div>
+        </template>
+        <template id="suggestionItemFrag">
+            <div id="id" class="suggestionItem">
+                Brand - Item Title
             </div>
         </template>
     </body>

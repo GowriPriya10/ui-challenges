@@ -32,4 +32,28 @@ export default class Products {
             }, wait)
         }
     }
+
+    debounceWithOptions(func, wait, option = {leading: false, trailing: true}) {
+        let timer;
+        let isLeadingInvoked = false;
+    
+        return function() {
+    
+        if(option.leading && !timer) { //timer is done but leading is true
+          func.apply(this, arguments);
+          isLeadingInvoked = true;
+        }else {
+            isLeadingInvoked = false;
+        }
+        
+      clearTimeout(timer) //clear timeout for avoiding multiple timer instances
+      
+        timer = setTimeout(() => {
+          if(option.trailing && !isLeadingInvoked) {
+            func.apply(this, arguments)
+          }
+          timer = null; //reset timer
+            }, wait);
+        };
+    }
 }
