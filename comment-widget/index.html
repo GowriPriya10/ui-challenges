@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comment Widget</title>
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="comment-container">
+                <div id="base-wrapper">
+                    <input type="text" name="comment-input" class="comment-input" id="comment-input" placeholder="Type your comment..." />
+                    <div id="comments-wrapper">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template id="comment">
+            <div class="comment">  
+                <div class="content">
+
+                </div>
+                <div class="actions">
+                    <div class="reply-btn">Reply</div>
+                    <div class="delete-btn">Delete</div>
+                </div>
+                <div class="replies"></div>
+                <div class="reply-input-wrapper">
+                    <input type="text" name="comment-input" id="comment-input" class="reply-input" placeholder="Type your comment..." />
+                </div>
+            </div>
+        </template>
+    </body>
+</html>
