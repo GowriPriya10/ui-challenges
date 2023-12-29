@@ -4,7 +4,7 @@ import TaskStore from './task-store';
 const taskStore = new TaskStore();
 const taskAddButton = document.getElementById('add-task');
 const taskInput = document.getElementById('task-item-input');
-
+const taskList = document.querySelector('#task-list-wrapper');
 
 taskAddButton.addEventListener('click', () => {
     addTaskToStore()
@@ -85,3 +85,35 @@ function deleteTask (taskId, wrapper, container) {
 }
 
 renderTaskList();
+
+taskList.addEventListener('dragstart', (e) => {
+    e.target.classList.add('dragging');
+})
+
+taskList.addEventListener('dragover', (e) => {
+    onDrag(e);
+});
+
+function onDrag(e) {
+    e.preventDefault();
+    const taskListWrapper = document.querySelector('#task-list-wrapper');
+    const dragEle = document.querySelector('.dragging');
+
+    const draggableEle = [...taskListWrapper.querySelectorAll('.task-item:not(.dragging)')];
+
+    // find the ele which is closest 
+    const afterEle = draggableEle.find(ele => {
+        return e.clientY <= ele.offsetTop + ele.offsetHeight/2;;
+    })
+
+    if(afterEle){
+        taskListWrapper.insertBefore(dragEle, afterEle);
+    }else {
+        taskListWrapper.appendChild(dragEle);
+    }
+}
+
+
+taskList.addEventListener('dragend', (e) => {
+    e.target.classList.remove('dragging');
+})

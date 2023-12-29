@@ -59,7 +59,6 @@ body {
 #task-input > button {
     flex: 1;
     margin: 8px;
-    min-width: 0px;
     color: #fff;
     background: #ff5945;
     border-radius: 5px;
@@ -72,6 +71,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding: 2px;
+    cursor: move;
 }
 
 .task-item > input[type="checkbox"] {
@@ -95,4 +95,8 @@ body {
     min-width: 0px;
     color: #ff5945;
     cursor: pointer;
+}
+
+.dragging {
+    opacity: 0.5;
 }
