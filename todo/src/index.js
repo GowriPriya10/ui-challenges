@@ -91,7 +91,7 @@ taskList.addEventListener('dragstart', (e) => {
 })
 
 taskList.addEventListener('dragover', (e) => {
-    onDrag(e);
+    throttle(onDrag(e), 1000);
 });
 
 function onDrag(e) {
@@ -113,7 +113,22 @@ function onDrag(e) {
     }
 }
 
-
 taskList.addEventListener('dragend', (e) => {
     e.target.classList.remove('dragging');
 })
+
+function throttle(func, delay) {
+	let wait = false;
+
+  return (...args) => {
+    if (wait) {
+        return;
+    }
+
+    func(...args);
+    wait = true;
+    setTimeout(() => {
+      wait = false;
+    }, delay);
+  }
+}
