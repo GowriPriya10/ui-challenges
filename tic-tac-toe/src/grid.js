@@ -50,7 +50,7 @@ export default class Grid {
                     setTimeout(() => {
                         alert(`Player ${this.currentPlayer+1} - Won!!!`);
                         reset();
-                    }, 1);
+                    }, 500);
                     return;
                 }
 

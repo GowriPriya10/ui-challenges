@@ -36,10 +36,12 @@ function renderTaskList() {
      */
 
     const taskList = taskStore.getTasks();
-
-    taskList.forEach(taskItem => {
-        addTaskToDOM(taskItem);
-    });
+    
+    if(taskList.length > 0) {
+        taskList.forEach(taskItem => {
+            addTaskToDOM(taskItem);
+        });
+    }
 }
 
 function addTaskToDOM(taskItem) {
@@ -90,12 +92,26 @@ taskList.addEventListener('dragstart', (e) => {
     e.target.classList.add('dragging');
 })
 
-taskList.addEventListener('dragover', (e) => {
-    throttle(onDrag(e), 1000);
+let throttle = true; 
+taskList.addEventListener('dragover', function(event) {
+    event.preventDefault();
+    
+    if (throttle) {
+
+      throttle = false;
+
+      onDrag(event);
+      
+      setTimeout(() => {
+        throttle = true;
+      }, 100);
+    }
+    console.log('waiting')
+    return false;
 });
 
 function onDrag(e) {
-    e.preventDefault();
+   
     const taskListWrapper = document.querySelector('#task-list-wrapper');
     const dragEle = document.querySelector('.dragging');
 
@@ -117,18 +133,19 @@ taskList.addEventListener('dragend', (e) => {
     e.target.classList.remove('dragging');
 })
 
-function throttle(func, delay) {
-	let wait = false;
+// function throttle(func, delay) {
+// 	let wait = false;
 
-  return (...args) => {
-    if (wait) {
-        return;
-    }
+//   return (...args) => {
+//     if (wait) {
+//         console.log('waiting')
+//         return;
+//     }
 
-    func(...args);
-    wait = true;
-    setTimeout(() => {
-      wait = false;
-    }, delay);
-  }
-}
+//     func(...args);
+//     wait = true;
+//     setTimeout(() => {
+//       wait = false;
+//     }, delay);
+//   }
+// }
