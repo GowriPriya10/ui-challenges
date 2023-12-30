@@ -1,0 +1,40 @@
+{
+  "redirects": [
+    {
+      "source": "/todo",
+      "destination": "/todo/index.html"
+    },
+    {
+      "source": "/tic-tac-toe",
+      "destination": "/tic-tac-toe/index.html"
+    },
+    {
+      "source": "/star-rating",
+      "destination": "/star-rating/index.html"
+    },
+    {
+      "source": "/calculator",
+      "destination": "/calculator/index.html"
+    },
+    {
+      "source": "/calendar",
+      "destination": "/calendar/index.html"
+    },
+    {
+      "source": "/carousel",
+      "destination": "/carousel/index.html"
+    },
+    {
+      "source": "/comment-widget",
+      "destination": "/comment-widget/index.html"
+    },
+    {
+      "source": "/product-catalog-search",
+      "destination": "/product-catalog-search/index.html"
+    },
+    {
+      "source": "/two-way-data-binding",
+      "destination": "/two-way-data-binding/index.html"
+    }
+  ]
+}
