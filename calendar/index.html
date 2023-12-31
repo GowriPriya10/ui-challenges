@@ -13,32 +13,18 @@
                     <div id="today"> Today </div>
                     <div id="next"> &gt; </div>
                 </div>
-                <div id="month-year">December 2023</div>
+                <div id="month-year"><span id="month"></span> - <span id="year"></span></div>
                 <div id="calendar-grid">
-                    <div class="calendar-days">
-                        <span>Sun</span>
-                    </div>
-                    <div class="calendar-days">
-                        <span>Mon</span>
-                    </div>
-                    <div class="calendar-days">
-                        <span>Tue</span>
-                    </div>
-                    <div class="calendar-days">
-                        <span>Wed</span>
-                    </div>
-                    <div class="calendar-days">
-                        <span>Thurs</span>
-                    </div>
-                    <div class="calendar-days">
-                        <span>Fri</span>
-                    </div>
-                    <div class="calendar-days">
-                        <span>Sat</span>
-                    </div>
+                    
                 </div>
             </div>
         </div>
+
+        <template id="day-cell">
+            <div class="calendar-days">
+                <span>Day</span>
+            </div>
+        </template>
 
         <template id="calendar-cell">
             <div class="cell" title="Add an event">
