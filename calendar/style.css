@@ -58,16 +58,17 @@ body {
     font-weight: 400;
 }
 
-#cell:not(.calendar-days) {
-    box-shadow: 1px 0 0 0 #888, 
+.cell {
+    /* box-shadow: 1px 0 0 0 #888, 
                 0 1px 0 0 #888, 
-                1px 1px 0 0 #888,   /* Just to fix the corner */
+                1px 1px 0 0 #888,   /* Just to fix the corner 
                 1px 0 0 0 #888 inset, 
-                0 1px 0 0 #888 inset;
+                0 1px 0 0 #888 inset; */
     transition: 0.3s;
     font-weight: 700;
     padding: 1em;
     aspect-ratio: 1;
+    max-width: 5em;
 }
 
 .today {
@@ -80,13 +81,12 @@ body {
     cursor: pointer;
 }
 
-#cell:hover:not(.omit-cell, .today) {
+.cell:hover:not(.omit-cell, .today) {
     background-color: rgb(180, 177, 177);
     color: white;
     cursor: pointer;
 }
 
 .omit-cell {
-    background-color: rgb(230, 227, 227);
     cursor: not-allowed;
 }
