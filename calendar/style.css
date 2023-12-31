@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#container {
+    margin: 5px;
+    min-height: 100%;
+    padding: 2em;
+}
+
+#calendar-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(107, 105, 105);
+    max-width: 900px;
+    margin: auto;
+}
+
+#option-select {
+    display: flex;
+    gap: 1em;
+    margin: 1em;
+    justify-content: flex-end;
+}
+
+#prev, #next, #today {
+    font-size: 1.5em;
+    padding: 0.2em;
+}
+
+#prev:hover, #next:hover, #today:hover {
+    background-color: rgb(241, 180, 180);
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+#month-year {
+    margin: 1em;
+    font-size: 1.25em;
+}
+
+#calendar-grid {
+    display: grid;
+    margin: 1em;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-days {
+    margin: auto;
+    color: rgb(77, 79, 79);
+    font-weight: 400;
+}
+
+#cell:not(.calendar-days) {
+    box-shadow: 1px 0 0 0 #888, 
+                0 1px 0 0 #888, 
+                1px 1px 0 0 #888,   /* Just to fix the corner */
+                1px 0 0 0 #888 inset, 
+                0 1px 0 0 #888 inset;
+    transition: 0.3s;
+    font-weight: 700;
+    padding: 1em;
+    aspect-ratio: 1;
+}
+
+.today {
+    background-color: rgb(223, 98, 98);
+    color: white;
+}
+
+.today:hover {
+    background-color: rgb(248, 142, 142);
+    cursor: pointer;
+}
+
+#cell:hover:not(.omit-cell, .today) {
+    background-color: rgb(180, 177, 177);
+    color: white;
+    cursor: pointer;
+}
+
+.omit-cell {
+    background-color: rgb(230, 227, 227);
+    cursor: not-allowed;
+}

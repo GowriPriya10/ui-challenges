@@ -2,11 +2,87 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Webpack App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar App</title>
     </head>
     <body>
-        <h1>Hello world!</h1>
-        <h2>Tip: Check your console</h2>
+        <div id="container">
+            <div id="calendar-container">
+                <div id="option-select">
+                    <div id="prev"> &lt; </div>
+                    <div id="today"> Today </div>
+                    <div id="next"> &gt; </div>
+                </div>
+                <div id="month-year">December 2023</div>
+                <div id="calendar-grid">
+                    <div class="calendar-days">
+                        <span>Sun</span>
+                    </div>
+                    <div class="calendar-days">
+                        <span>Mon</span>
+                    </div>
+                    <div class="calendar-days">
+                        <span>Tue</span>
+                    </div>
+                    <div class="calendar-days">
+                        <span>Wed</span>
+                    </div>
+                    <div class="calendar-days">
+                        <span>Thurs</span>
+                    </div>
+                    <div id="cell" class="calendar-days">
+                        <span>Fri</span>
+                    </div>
+                    <div class="calendar-days">
+                        <span>Sat</span>
+                    </div>
+                    <div id="cell">
+                        <span>1</span>
+                    </div>
+                    <div id="cell">
+                        <span>2</span>
+                    </div>
+                    <div id="cell" class="today">
+                        <span>3</span>
+                    </div>
+                    <div id="cell">
+                        <span>Date</span>
+                    </div>
+                    <div id="cell">
+                        <span>Date</span>
+                    </div>
+                    <div id="cell">
+                        <span>Date</span>
+                    </div>
+                    <div id="cell">
+                        <span>Date</span>
+                    </div>
+                    <div id="cell" class="omit-cell">
+                        <span>Date</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template id="calendar-cell">
+            <div id="cell" title="Add an event">
+                <span>Date</span>
+            </div>
+        </template>
+
+        <template id="event-template">
+            <div id="event-container">
+                <div id="title">
+                    <span>Untitled</span>
+                </div>
+            </div>
+            <div id="event-description">
+                <span>Description...</span>
+            </div>
+            <div id="save-event">
+                <button>Save Event</button>
+            </div>
+        </template>
     </body>
     
 </html>
