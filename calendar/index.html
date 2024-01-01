@@ -18,6 +18,11 @@
                     
                 </div>
             </div>
+            <div class="event-wrapper">
+                <div id="event-container">
+
+                </div>
+            </div>
         </div>
 
         <template id="day-cell">
@@ -33,16 +38,29 @@
         </template>
 
         <template id="event-template">
-            <div id="event-container">
+            <div id="close"> X </div>
+            <div id="event-form">
                 <div id="title">
-                    <span>Untitled</span>
+                    Event Title: <span contenteditable="true">Your Event Title...</span>
+                </div>
+                <div id="event-description">
+                    Event Description: <span contenteditable="true">Your Event Description...</span>
+                </div>
+                <div id="event-date">
+                    Date: <span>1-January-1999</span>
+                </div>
+                <div id="save-event">
+                    <button name="save-event">Save Event</button>
                 </div>
             </div>
-            <div id="event-description">
-                <span>Description...</span>
+            <div id="events-list">
+
             </div>
-            <div id="save-event">
-                <button>Save Event</button>
+        </template>
+        <template id="event-list-cell">
+            <div id="event-cell">
+                <div class="title">Event Title</div> - 
+                <div class="desc">Event Description</div>
             </div>
         </template>
     </body>

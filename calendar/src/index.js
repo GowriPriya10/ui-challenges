@@ -1,4 +1,6 @@
 import '../style.css';
 import CalendarLayout from './layout';
+import EventStore from './store';
 
-const calendarLayout = new CalendarLayout();
+const eventStore = new EventStore();
+const calendarLayout = new CalendarLayout(eventStore);

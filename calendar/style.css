@@ -9,7 +9,6 @@ body {
 }
 
 #container {
-    margin: 5px;
     min-height: 100%;
     padding: 2em;
 }
@@ -89,4 +88,99 @@ body {
 
 .omit-cell {
     cursor: not-allowed;
+}
+
+.event-wrapper {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    display: grid;
+    gap: 1em;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#event-container {
+    height: 100vh;
+    position: absolute;
+    width: 70%;
+    border: 2px solid darkgrey;
+    top: 50%;
+    right: 0;
+    background: white;
+    transform: translateY(-50%);
+    overflow: auto;
+}
+
+#close {
+    font-size: 1em;
+    padding: 0.5em;
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+    width: min-content;
+    height: min-content;
+}
+
+#event-form {
+    margin: 2em;
+    padding: 2em;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    border: 2px solid #e2b7b7;
+    border-radius: 1em;
+}
+
+#title, #event-description {
+    display: grid;
+    gap: 1em;
+}
+
+span[contenteditable = "true"] {
+    background-color: #d8d8d8;
+    padding: 1em;
+    border-radius: 1em;
+    color: #472020;
+    font-size: 0.90em;
+    overflow-x: auto;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+#save-event {
+    display: flex;
+    justify-content: center;
+}
+
+#save-event > button {
+    color: white;
+    background-color: #f27878;
+    border: 1px solid #f36868;
+    padding: 1em;
+    border-radius: 0.75em;
+    cursor: pointer;
+}
+
+#events-list {
+    margin: 2em;
+    padding: 2em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+}
+
+#event-cell {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    background: #f6f5f5;
+    padding: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

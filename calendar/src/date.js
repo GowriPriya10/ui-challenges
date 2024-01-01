@@ -23,7 +23,7 @@ export function startingDayOfMonth(year, month) {
 }
 
 export function getPrevMonthDetails(year, month) {
-    const prevMonth = months.indexOf(month) === 0 ? new Date(year - 1, 0, 1) : new Date(year, months.indexOf(month) - 1, 1);
+    const prevMonth = months.indexOf(month) === 0 ? new Date(year - 1, 11, 1) : new Date(year, months.indexOf(month) - 1, 1);
     return {
         date: prevMonth.getDate(),
         month: months[prevMonth.getMonth()],
