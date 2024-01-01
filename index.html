@@ -3,17 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://media.istockphoto.com/id/1186341751/vector/climbing-the-mountain.jpg?s=612x612&w=0&k=20&c=9m-9RYpaA4a6ebXtVp9OdHHuy6zOr02QZ3rARNHzcPM=">
     <title>UI-Challenges</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #FAACA8;
+            background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+        }
+
+        #container {
+            grid-template-columns: repeat(auto-fill, 20rem);
+            display: grid;
+            margin: 1em;
+            padding: 1em;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 20rem;
+            height: auto;
+            background-color: white;
+            border-radius: 1em;
+            padding: 2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:visited {
+            color: black;
+        }
+
+        img {
+            width: 15rem;
+            height: 12rem;
+            object-fit: contain;
+        }
+
+        p {
+            font-size: 1.25em;
+            font-family: serif;
+        }
+
+        p:hover {
+            text-decoration: underline;
+        }
+
+        #tags {
+            display: flex;
+            flex-flow: wrap;
+            gap: 0.3em;
+            font-size: 0.85em;
+            margin: 1em;
+        }
+
+        #tags > span {
+            background: #dedef6;
+            padding: 0.5em;
+            border-radius: 5px 
+        }
+
+        .code {
+            font-size: 0.75em;
+            position: relative;
+            left: 15em;
+            padding: 1em;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <a href="/todo">Todo</a>
-    <a href="/tic-tac-toe">Tic Tac Toe</a>
-    <a href="/star-rating">Star Rating</a>
-    <a href="/calculator">Calculator</a>
-    <a href="/calendar">Calendar</a>
-    <a href="/carousel">Carousel</a>
-    <a href="/comment-widget">Comment-widget</a>
-    <a href="/product-catalog-search">Product Catalog Search</a>
-    <a href="/two-way-data-binding">Two Way Data Binding</a>
+    <div id="container">
+        <div class="card" title="View demo">
+            <a href="/todo">
+                <img src="https://media.istockphoto.com/id/1330040188/photo/to-do-list-in-spiral-notepad-isolated-on-desk.jpg?s=612x612&w=0&k=20&c=ksolS1xqL9gnTOaXS4OFGvF3S_kfV3CW0tMhaQ8wkUg=" />
+                <p>Todo App</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/todo">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>DOM Manipulation</span>
+                <span>Drag and Drop Api</span>
+                <span>Throttling</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/product-catalog-search">
+                <img src="https://cdn-icons-png.flaticon.com/512/8465/8465826.png" />
+                <p>Product Catalog Search</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/product-catalog-search">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>Debounce</span>
+                <span>Intersection Observer</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/calendar">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIeGH6WTKQ1VgJxRXpAzzDq4CRa9j8AaNw6f4a48mLCfPNOESvWSDwXqv8AUKgSoyaNdI&usqp=CAU" />
+                <p>Calendar</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/calendar">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>DOM Manipulation</span>
+                <span>Web Storage API</span>
+                <span>Date API</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/tic-tac-toe">
+                <img src="https://cdn-icons-png.flaticon.com/512/1865/1865460.png"/>
+                <p>Tic Tac Toe</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/tic-tac-toe">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>DOM Manipulation</span>
+                <span>setTimeout</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/comment-widget">
+                <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/comment-box-4887336-4064422.png?f=webp" />
+                <p>Comment-widget</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/comment-widget">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>DOM Manipulation</span>
+                <span>Nested nodes logic</span>
+                <span>Web Storage API</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/two-way-data-binding">
+                <img src="https://www.collidu.com/media/catalog/product/img/c/2/c263d5aa60c02ebe395e28099520d723e37c7643ec9b7a6f2d301876822807b8/two-way-data-binding-slide1.png" />
+                <p>Two Way Data Binding</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/two-way-data-binding">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>JS Proxy</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/star-rating">
+                <img src="https://www.iasexpress.net/wp-content/uploads/2022/01/New-Star-Rating-System.jpg"/>
+                <p>Star Rating</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/star-rating">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>DOM Manipulation</span>
+                <span>Transistions/ Transforms</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/calculator">
+                <img src="https://cdn-icons-png.flaticon.com/512/191/191110.png"/>
+                <p>Calculator</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/calculator">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>DOM Manipulation</span>
+            </div>
+        </div>
+        <div class="card" title="View demo">
+            <a href="/carousel">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmKS5QuYgvNwCnCUFC8-KpCNMCxx4DbXwTCydWxRCx9rz4YuUka3KAFDQp2RM59Zy1sGQ&usqp=CAU" />
+                <p>Carousel</p>
+            </a>
+            <span class="code" title="view code">
+                <a href="https://github.com/GowriPriya10/ui-challenges/tree/master/carousel">View Source code</a>
+            </span>
+            <div id="tags">
+                <span>Transistions/ Transforms</span>
+                <span>Positions (css)</span>
+                <span>setInterval</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
